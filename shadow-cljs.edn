@@ -1,0 +1,14 @@
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[cider/cider-nrepl "0.16.0-SNAPSHOT"]]
+
+ :builds
+ {:script
+  {:target    :node-script
+   :main      demo.foo/main
+   :output-to "out/script.js"
+   :compiler-options {:optimizations :none}
+   :devtools {:before-load demo.foo/stop!
+              :after-load demo.foo/start!}}}}
